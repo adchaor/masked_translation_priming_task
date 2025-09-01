@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Translation Priming Lexical Decision Task&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', 'Noto Sans SC', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.centered-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100vw;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0f2f5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.task-display {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1f2937;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.countdown {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 6rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-100"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="app" class="centered-container"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="instructionsScreen" class="text-center p-8 bg-white rounded-lg shadow-lg max-w-2xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-3xl font-bold mb-4 text-gray-800"&gt;Lexical Decision Task Instructions&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg text-gray-600 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Welcome to the experiment. You will see a series of letter strings. Your task is to decide whether each string is a real English word or not.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="text-left list-disc list-inside mb-6 space-y-2 text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;A fixation cross (+) will appear in the middle of the screen first. Please focus on it.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;A Chinese word will flash very briefly.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Then, an English letter string will appear.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;If the string is a **real English word**, press the &lt;kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg"&gt;0&lt;/kbd&gt; key.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;If the string is **NOT a real English word**, press the &lt;kbd class="px-2 py-1.5 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg"&gt;1&lt;/kbd&gt; key.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg text-gray-600 mb-8"&gt;Please respond as quickly and as accurately as possible. First, you will go through a few practice trials. The experiment will begin when you are ready.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="startButton" class="px-8 py-3 bg-blue-600 text-white font-bold text-lg rounded-md hover:bg-blue-700 transition-colors duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Start Practice</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="readyScreen" class="hidden text-center p-8 bg-white rounded-lg shadow-lg max-w-2xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 id="readyTitle" class="text-3xl font-bold mb-4 text-gray-800"&gt;Get Ready for Practice&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p id="readyText" class="text-lg text-gray-600 mb-8"&gt;When you are ready, click the button below to start the countdown.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="readyButton" class="px-8 py-3 bg-blue-600 text-white font-bold text-lg rounded-md hover:bg-blue-700 transition-colors duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Ready</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="experimentScreen" class="hidden w-full h-full flex flex-col justify-center items-center bg-white relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w-11/12 max-w-2xl absolute top-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-gray-200 rounded-full h-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="progressBar" class="bg-blue-600 h-4 rounded-full transition-all duration-300 ease-linear" style="width: 0%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="stimulusDisplay" class="task-display"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="resultsScreen" class="hidden text-center p-8 bg-white rounded-lg shadow-lg max-w-3xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-3xl font-bold mb-6 text-gray-800"&gt;Experiment Complete&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg text-gray-600 mb-8"&gt;Thank you for your participation. Here are your results:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-gray-50 p-4 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-xl font-semibold mb-2 text-gray-700"&gt;Average Reaction Time&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;table class="w-full text-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr class="border-b"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="py-2"&gt;Condition&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="py-2"&gt;RT (ms)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;&lt;td class="py-1 font-medium"&gt;Translation&lt;/td&gt;&lt;td id="rt-translation" class="py-1"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;&lt;td class="py-1 font-medium"&gt;Control (Unrelated Word)&lt;/td&gt;&lt;td id="rt-control" class="py-1"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                             </span>&lt;tr&gt;&lt;td class="py-1 font-medium"&gt;Non-word&lt;/td&gt;&lt;td id="rt-nonword" class="py-1"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-gray-50 p-4 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-xl font-semibold mb-2 text-gray-700"&gt;Accuracy&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;table class="w-full text-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr class="border-b"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="py-2"&gt;Condition&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;th class="py-2"&gt;Accuracy&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;&lt;td class="py-1 font-medium"&gt;Translation&lt;/td&gt;&lt;td id="acc-translation" class="py-1"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;&lt;td class="py-1 font-medium"&gt;Control (Unrelated Word)&lt;/td&gt;&lt;td id="acc-control" class="py-1"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                             </span>&lt;tr&gt;&lt;td class="py-1 font-medium"&gt;Non-word&lt;/td&gt;&lt;td id="acc-nonword" class="py-1"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tr class="border-t font-semibold"&gt;&lt;td class="py-1"&gt;Total&lt;/td&gt;&lt;td id="acc-total" class="py-1"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-6 bg-blue-50 p-4 rounded-lg border border-blue-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-xl font-semibold mb-2 text-blue-800"&gt;Priming Effect&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600"&gt;(RT Control - RT Translation)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-3xl font-bold mt-2 text-blue-600" id="priming-effect"&gt;N/A&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-8 flex justify-center space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="downloadButton" class="px-6 py-3 bg-green-600 text-white font-bold text-lg rounded-md hover:bg-green-700 transition-colors duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Download Results (CSV)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="restartButton" class="px-8 py-3 bg-blue-600 text-white font-bold text-lg rounded-md hover:bg-blue-700 transition-colors duration-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Run Again</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- DOM Elements ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const instructionsScreen = document.getElementById('instructionsScreen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const experimentScreen = document.getElementById('experimentScreen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const resultsScreen = document.getElementById('resultsScreen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const readyScreen = document.getElementById('readyScreen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const startButton = document.getElementById('startButton');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const restartButton = document.getElementById('restartButton');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const readyButton = document.getElementById('readyButton');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const stimulusDisplay = document.getElementById('stimulusDisplay');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const progressBar = document.getElementById('progressBar');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const readyTitle = document.getElementById('readyTitle');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const readyText = document.getElementById('readyText');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const downloadButton = document.getElementById('downloadButton'); // NEW</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- Experimental Parameters ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const FIXATION_DURATION = 500; // ms</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const PRIME_DURATION = 60; <span class="Apple-converted-space">    </span>// ms (MODIFIED)</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- Stimuli ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const masterPairs = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// List 1</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '苹果', target: 'APPLE' }, { prime: '桌子', target: 'TABLE' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '学校', target: 'SCHOOL' }, { prime: '房子', target: 'HOUSE' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '水', target: 'WATER' }, { prime: '书', target: 'BOOK' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '椅子', target: 'CHAIR' }, { prime: '钱', target: 'MONEY' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '门', target: 'DOOR' }, { prime: '路', target: 'ROAD' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '树', target: 'TREE' }, { prime: '月亮', target: 'MOON' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '星星', target: 'STAR' }, { prime: '手', target: 'HAND' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '鱼', target: 'FISH' }, { prime: '火', target: 'FIRE' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// List 2</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '电脑', target: 'COMPUTER' }, { prime: '电话', target: 'PHONE' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '电视', target: 'TV' }, { prime: '笔', target: 'PEN' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '狗', target: 'DOG' }, { prime: '猫', target: 'CAT' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '鸟', target: 'BIRD' }, { prime: '花', target: 'FLOWER' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '太阳', target: 'SUN' }, { prime: '朋友', target: 'FRIEND' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '医生', target: 'DOCTOR' }, { prime: '学生', target: 'STUDENT' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '老师', target: 'TEACHER' }, { prime: '汽车', target: 'CAR' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ prime: '飞机', target: 'PLANE' }, { prime: '船', target: 'BOAT' }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const nonWords = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// List 1</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'FEPPLE', 'TIBLE', 'SCHOOF', 'HOUCE', 'WOTER', 'BOOF', 'CHAIRN', 'MONEX',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>'DOAR', 'ROAP', 'TREL', 'MOOF', 'STAL', 'HOND', 'FUSH', 'FIRN',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// List 2</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'COMPITER', 'PHANE', 'TEV', 'PON', 'DIG', 'CET', 'BARD', 'FLOWERK',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'SAN', 'FRENDI', 'DOCTER', 'STUDINT', 'TEASHUR', 'CUR', 'PLONE', 'BOOT'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const practiceTrials = [</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>{ prime: '杯子', target: 'CUP', condition: 'translation', correct_response: 'word' },</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>{ prime: '床', target: 'BED', condition: 'translation', correct_response: 'word' },</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>{ prime: '头', target: 'HEAD', condition: 'control', correct_response: 'word' },</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>{ prime: '眼睛', target: 'FOOB', condition: 'nonword', correct_response: 'non-word' },</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>{ prime: '鼻子', target: 'NERSE', condition: 'nonword', correct_response: 'non-word' },</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>{ prime: '嘴', target: 'MIV', condition: 'nonword', correct_response: 'non-word' }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let currentTrialIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let resultsData = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let trialStartTime;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let isWaitingForResponse = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let currentTrials = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let isPracticeSession = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>/** Shuffles an array in place. */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function shuffleArray(array) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = array.length - 1; i &gt; 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const j = Math.floor(Math.random() * (i + 1));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>[array[i], array[j]] = [array[j], array[i]];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>/** Generates a counterbalanced set of trials for the main experiment. */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function generateCounterbalancedTrials() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const localMasterPairs = [...masterPairs];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffleArray(localMasterPairs);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const localNonWords = [...nonWords];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffleArray(localNonWords);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const setA = localMasterPairs.slice(0, 16);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const setB = localMasterPairs.slice(16, 32);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const generatedTrials = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 1. Translation Trials (16)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setA.forEach(pair =&gt; generatedTrials.push({ ...pair, condition: 'translation', correct_response: 'word' }));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 2. Control Trials (16)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const controlPrimes = setB.map(p =&gt; p.prime);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const controlTargets = setB.map(p =&gt; p.target);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffleArray(controlTargets);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; controlTargets.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (setB[i].target === controlTargets[i]) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const nextIndex = (i + 1) % controlTargets.length;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>[controlTargets[i], controlTargets[nextIndex]] = [controlTargets[nextIndex], controlTargets[i]];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; 16; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>generatedTrials.push({ prime: controlPrimes[i], target: controlTargets[i], condition: 'control', correct_response: 'word' });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// 3. Non-word Trials (32)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const allPrimes = localMasterPairs.map(p =&gt; p.prime);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffleArray(allPrimes);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; 32; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>generatedTrials.push({ prime: allPrimes[i], target: localNonWords[i], condition: 'nonword', correct_response: 'non-word' });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return generatedTrials;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function setupPractice() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>instructionsScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultsScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readyTitle.textContent = "Get Ready for Practice";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readyText.textContent = "You will complete 6 practice trials. Click the button below to start the countdown.";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readyButton.onclick = () =&gt; startCountdown('practice');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readyScreen.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function startCountdown(phase) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readyScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>experimentScreen.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>progressBar.style.width = '0%';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stimulusDisplay.classList.add('countdown');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>let count = 5;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>stimulusDisplay.textContent = count;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const interval = setInterval(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>count--;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (count &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>stimulusDisplay.textContent = count;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>clearInterval(interval);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>stimulusDisplay.classList.remove('countdown');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (phase === 'practice') {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>startPractice();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>startMainExperiment();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function startPractice() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>isPracticeSession = true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentTrialIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentTrials = [...practiceTrials];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffleArray(currentTrials);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>progressBar.style.visibility = 'hidden';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>runNextTrial();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function startMainExperiment() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>isPracticeSession = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultsScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentTrialIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultsData = [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentTrials = generateCounterbalancedTrials();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffleArray(currentTrials);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>progressBar.style.visibility = 'visible';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>progressBar.style.width = '0%';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>runNextTrial();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function runNextTrial() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (currentTrialIndex &gt;= currentTrials.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (isPracticeSession) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>stimulusDisplay.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>readyTitle.textContent = "Get Ready for the Main Experiment";</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>readyText.textContent = "The practice is over. The main experiment has 64 trials. Your results will be recorded.";</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>readyButton.onclick = () =&gt; startCountdown('main');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>experimentScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>readyScreen.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>showResults();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>isWaitingForResponse = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const trial = currentTrials[currentTrialIndex];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>stimulusDisplay.textContent = '+';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>stimulusDisplay.textContent = trial.prime;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>stimulusDisplay.textContent = trial.target;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>trialStartTime = performance.now();</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>isWaitingForResponse = true;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}, PRIME_DURATION);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, FIXATION_DURATION);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function handleKeyPress(e) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!isWaitingForResponse) return;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const key = e.key;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (key === '0' || key === '1') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>isWaitingForResponse = false;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const reactionTime = performance.now() - trialStartTime;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const response = (key === '0') ? 'word' : 'non-word';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const trial = currentTrials[currentTrialIndex];</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!isPracticeSession) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>resultsData.push({</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>trial_index: currentTrialIndex + 1, // NEW</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>...trial,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>response: response,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>rt: reactionTime,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>correct: response === trial.correct_response,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>currentTrialIndex++;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!isPracticeSession) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const progress = (currentTrialIndex / currentTrials.length) * 100;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>progressBar.style.width = `${progress}%`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>stimulusDisplay.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(runNextTrial, 500);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function showResults() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>experimentScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultsScreen.classList.remove('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const resultsByCondition = {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>translation: { rts: [], correct: 0, total: 0 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>control: { rts: [], correct: 0, total: 0 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>nonword: { rts: [], correct: 0, total: 0 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultsData.forEach(res =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (res.condition in resultsByCondition) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const cond = resultsByCondition[res.condition];</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>cond.total++;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (res.correct) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>cond.rts.push(res.rt);</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>cond.correct++;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>let rtTranslation, rtControl;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (const condition in resultsByCondition) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const data = resultsByCondition[condition];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const avgRt = data.rts.length &gt; 0 ? (data.rts.reduce((a, b) =&gt; a + b, 0) / data.rts.length) : NaN;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const accuracy = data.total &gt; 0 ? ((data.correct / data.total) * 100).toFixed(1) + '%' : 'N/A';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById(`rt-${condition}`).textContent = isNaN(avgRt) ? 'N/A' : avgRt.toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById(`acc-${condition}`).textContent = accuracy;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (condition === 'translation') rtTranslation = avgRt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (condition === 'control') rtControl = avgRt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const totalCorrect = resultsData.filter(res =&gt; res.correct).length;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const totalTrials = resultsData.length;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const totalAccuracy = totalTrials &gt; 0 ? ((totalCorrect / totalTrials) * 100).toFixed(1) + '%' : 'N/A';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('acc-total').textContent = totalAccuracy;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const primingEffectEl = document.getElementById('priming-effect');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!isNaN(rtTranslation) &amp;&amp; !isNaN(rtControl)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>primingEffectEl.textContent = `${(rtControl - rtTranslation).toFixed(2)} ms`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>primingEffectEl.textContent = 'N/A (insufficient data)';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// **** NEW DOWNLOAD FUNCTION ****</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function downloadCSV() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const headers = ['trial_index', 'prime', 'target', 'condition', 'correct_response', 'response', 'rt', 'correct'];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let csvContent = "data:text/csv;charset=utf-8," + headers.join(",") + "\n";</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>resultsData.forEach(row =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const values = headers.map(header =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>let value = row[header];</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>// Round RT to 2 decimal places for cleanliness</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (header === 'rt') {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>value = value.toFixed(2);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>return `"${value}"`; // Enclose in quotes to handle any potential commas</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>csvContent += values.join(",") + "\n";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const encodedUri = encodeURI(csvContent);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const link = document.createElement("a");</p>
+<p class="p1"><span class="Apple-converted-space">                </span>link.setAttribute("href", encodedUri);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>link.setAttribute("download", `lexical_decision_results_${new Date().toISOString()}.csv`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.body.appendChild(link);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>link.click();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.body.removeChild(link);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- Event Listeners ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>startButton.addEventListener('click', setupPractice);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>restartButton.addEventListener('click', setupPractice);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.addEventListener('keydown', handleKeyPress);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>downloadButton.addEventListener('click', downloadCSV); // NEW</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
